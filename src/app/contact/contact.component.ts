@@ -26,11 +26,11 @@ export class ContactComponent {
   ];
 
   ShowMsg: boolean = false;
-  @ViewChildren('myInput', { read: ElementRef }) myInputs: QueryList<ElementRef> | undefined;
+  @ViewChildren('myInput', { read: ElementRef }) myInputs!: QueryList<ElementRef>;
 
   onSubmit(): void {
 
-    this.myInputs?.toArray().forEach(input => {
+    this.myInputs.forEach(input => {
       input.nativeElement.value = '';
     });
 
